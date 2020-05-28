@@ -14,6 +14,5 @@
     <li><strong>Status: </strong> <?= $tasks['completed'] ? 'Complete' : 'Incomplete' ?></li>
 </ul>
    
-
 </body>
 </html>
