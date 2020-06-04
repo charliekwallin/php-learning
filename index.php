@@ -1,4 +1,5 @@
 <?php
+require  'functions.php';
 
 $person = [
     'age' => 55,
@@ -6,6 +7,8 @@ $person = [
     'job' => 'Instructor in some capacity'
 ];
 require 'index.view.php';
+
+old_enough(20);
 
 
 
