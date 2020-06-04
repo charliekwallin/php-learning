@@ -11,7 +11,19 @@
     <li><strong>Name: </strong> <?= $tasks['title']; ?> </li>
     <li><strong>Due: </strong> <?= $tasks['due']; ?> </li>
     <li><strong>Responsible: </strong> <?= $tasks['assigned_to']; ?></li>
-    <li><strong>Status: </strong> <?= $tasks['completed'] ? 'Complete' : 'Incomplete' ?></li>
+    <li>
+        <strong>Status: </strong>
+            <!-- 
+                Use when you want to write additional HTML that 
+                would look messy with PHP 
+            -->
+
+             <?php if ($tasks['completed']) : ?>
+                 <span class="icon">&#9989;</span>
+            <?php else : ?>
+                 Incomplete
+            <?php endif ?>
+    </li>
 </ul>
    
 </body>

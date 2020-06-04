@@ -4,7 +4,7 @@ $tasks =  [
     'title' => 'Buy dog food',
     'due' => 'today',
     'assigned_to' => 'Charlie',
-    'completed' => false
+    'completed' => true
 ];
 
 require 'index.view.php';
