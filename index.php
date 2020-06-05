@@ -1,38 +1,9 @@
 <?php
 
-class Task {
-    // class propertie
-    public $description;
-    public $completed = false;
+require 'Task.php';
+require 'functions.php';
 
-    // method
-    public function __construct($description)
-    {
-        $this->description = $description;
-    }
-
-    public function complete() 
-    {
-        $this->completed = true;
-    }
-
-    public function isComplete()
-    {
-        return $this->completed;
-    }
-
-}
-
-$task = new Task("Buy beer");
-
-$task-> isComplete();
-
-$tasks = [
-    new Task("Fill up bike tires"),
-    new Task("Get through pandemic"),
-    new Task("Practice concertina")
-];
-
-$tasks[1]->complete();
+$pdo = connectToDB();
+$tasks = fetchAllTasks($pdo);
 
 require 'index.view.php';
