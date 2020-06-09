@@ -1,9 +1,10 @@
 <?php
 
-
 // We need $query here because of the return value in the bootstrap.php file
-$query = require 'bootstrap.php';
+$query = require 'core/bootstrap.php';
 
-$tasks = $query->selectAll('todos');
+$router = new Router;
+require 'routes.php';
 
-require 'index.view.php';
+ // $uri = (trim($_SERVER['REQUEST_URI'], '/'));
+ require $router->direct('contact');
