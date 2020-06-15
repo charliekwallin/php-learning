@@ -15,7 +15,7 @@ class Router
       //  var_dump($this->routes['contact']); exit();
         if ( array_key_exists($uri, $this->routes )) {
            
-            return $this->routes['contact'];
+            return trim($this->routes[$uri], '/');
        }
 
        throw new Exception('No route defined for this URI: ' . $uri);
