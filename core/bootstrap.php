@@ -1,6 +1,10 @@
 <?php
+
+$app = [];
+
+$app['config'] = require 'config.php';
 // returns the array $config
-$config = require 'config.php';
+
 
 require 'core/Router.php';
 require 'core/Request.php';
@@ -14,4 +18,5 @@ require 'core/database/QueryBuilder.php';
 
 // Then this line can become explicit and we can just return it
 // When we do this we need the bootstrap to hold the returned value.
-return new QueryBuilder(Connection::make($config['database']));
+
+$app['database'] = new QueryBuilder(Connection::make($app['config']['database']));
