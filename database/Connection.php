@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * Template that accepts PDO database connection values 
+ * 
+ * @param array $config called from bootstrap. It calls the config.php file. 
+ *    config.php contains the array of database connection values
+ */
 class Connection 
 {
     public static function make($config) 
