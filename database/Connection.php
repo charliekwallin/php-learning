@@ -22,3 +22,10 @@ class Connection
         }
     }
 }
+
+/**
+ * Craetes a new instance of PDO that accepts database connection values 
+ * 
+ * @param array $config called from bootstrap. It calls the config.php file. 
+ *    config.php contains the array of database connection values
+ */
