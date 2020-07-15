@@ -10,15 +10,27 @@ class QueryBuilder
         $this->pdo = $pdo;
     }
     
-    public function add_task($new_task) 
+    public function insert($table, $parameters) 
     {
-        try{
-            $sql = "INSERT INTO todos (description, completed) VALUES(?,?)";
-            $stmt= $this->pdo->prepare($sql);
-            $stmt->execute($new_task);
-        } catch(PDOException $e) {
-            echo $sql . "<br>" . $e->getMessage();
-        }
+            // $sql = sprintf(
+            //     'INSERT INTO %s (%s) VALUES(%s)',
+            //     $table,
+            //     implode(', ', array_keys($parameters)),
+            //     ':' . implode(', :', array_keys($parameters))
+            // );
+            
+           // die(var_dump($sql));
+
+           $sql = "INSERT INTO $table (description, completed)
+                    VALUES(?,?)";
+           
+          // die(var_dump($sql));
+            try {
+                $stmt= $this->pdo->prepare($sql);
+                $stmt->execute($parameters);
+            } catch (Exception $e) {
+                echo $e->getMessage();
+            }
     }
 
     public function selectAll($table)

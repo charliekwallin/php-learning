@@ -9,7 +9,8 @@ $new_task = [
 ];
 
 try{
-    $tasks = $app['database']->add_task($new_task);
+    $tasks = $app['database']->insert('todos', $new_task);
+    header('Location: /');
     //header("Location: http://" . $_SERVER['HTTP_HOST']. "/controllers/index.php");
     //TODO: add success message
    //TODO: Redirect

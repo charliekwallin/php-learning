@@ -1,5 +1,10 @@
 <?php require('partials/head.php'); ?>
 
+<h1>Current Tasks</h1>
+<?php foreach ($tasks as $task) : ?>
+    <li><?= $task->description ?></li>
+<?php endforeach; ?>
+
 <h1>Add a Task</h1>
 
 <form method="POST" action="add-task">
