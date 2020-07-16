@@ -9,7 +9,7 @@ $new_task = [
 ];
 
 try{
-    $tasks = $app['database']->insert('todos', $new_task);
+    $tasks = App::get('database')->insert('todos', $new_task);
     header('Location: /');
     //header("Location: http://" . $_SERVER['HTTP_HOST']. "/controllers/index.php");
     //TODO: add success message
